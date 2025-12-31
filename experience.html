@@ -11,11 +11,10 @@
 
 <body>
 <script>
-  // Immediately check for transition state to prevent flash
+  // Immediately check for transition state and prepare for slide-in
   (function() {
     if (sessionStorage.getItem('isTransitioning') === 'true') {
-      document.body.style.opacity = '0';
-      document.body.style.visibility = 'hidden';
+      document.body.classList.add('page-loading');
     }
   })();
 </script>
@@ -225,13 +224,7 @@
       // Add transition class to main content
       mainContent.classList.add('transitioning-out');
       
-      // Hide body completely after slide-out to prevent flash
-      setTimeout(() => {
-        document.body.classList.add('transitioning-out');
-        document.body.classList.remove('transitioning');
-      }, 450);
-      
-      // Navigate after animation completes
+      // Navigate after slide-out animation completes
       setTimeout(() => {
         window.location.href = href;
       }, 500);
@@ -246,11 +239,18 @@
   // Check if we're coming from a transition and start with slide-in
   if (sessionStorage.getItem('isTransitioning') === 'true') {
     sessionStorage.removeItem('isTransitioning');
-    // Restore body visibility and remove transition classes
-    document.body.style.opacity = '';
-    document.body.style.visibility = '';
-    document.body.classList.remove('transitioning-out');
-    // The slide-in animation is already applied via CSS to .main-content
+    // Ensure DOM is ready, then trigger slide-in animation
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        requestAnimationFrame(() => {
+          document.body.classList.remove('page-loading');
+        });
+      });
+    } else {
+      requestAnimationFrame(() => {
+        document.body.classList.remove('page-loading');
+      });
+    }
   }
 
   // Handle expandable job cards
