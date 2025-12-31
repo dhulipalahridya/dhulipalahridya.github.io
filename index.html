@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hridya Dhulipala | PhD Candidate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+<script>
+  // Immediately check for transition state to prevent flash
+  (function() {
+    if (sessionStorage.getItem('isTransitioning') === 'true') {
+      document.body.style.opacity = '0';
+      document.body.style.visibility = 'hidden';
+    }
+  })();
+</script>
+
+<div class="layout-container">
+  <div class="top-nav-buttons">
+    <div class="menu-toggle" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </div>
+    <a href="index.html" class="nav-icon-btn active-nav" aria-label="Home" title="Home">
+      <i class="fas fa-home"></i>
+    </a>
+    <a href="publications.html" class="nav-icon-btn" aria-label="Publications" title="Publications">
+      <i class="fas fa-book"></i>
+    </a>
+    <a href="experience.html" class="nav-icon-btn" aria-label="Experience" title="Experience">
+      <i class="fas fa-briefcase"></i>
+    </a>
+    <a href="education.html" class="nav-icon-btn" aria-label="Education" title="Education">
+      <i class="fas fa-graduation-cap"></i>
+    </a>
+    <a href="skills.html" class="nav-icon-btn" aria-label="Skills" title="Skills">
+      <i class="fas fa-code"></i>
+    </a>
+    <a href="contact.html" class="nav-icon-btn" aria-label="Contact" title="Contact">
+      <i class="fas fa-phone"></i>
+    </a>
+  </div>
+  <nav class="sidebar">
+    <a href="index.html" class="sidebar-logo">Hridya Dhulipala</a>
+    <ul class="sidebar-menu">
+      <li><a href="index.html" class="sidebar-link active">About</a></li>
+      <li><a href="publications.html" class="sidebar-link">Publications</a></li>
+      <li><a href="experience.html" class="sidebar-link">Experience</a></li>
+      <li><a href="education.html" class="sidebar-link">Education</a></li>
+      <li><a href="skills.html" class="sidebar-link">Skills</a></li>
+      <li><a href="contact.html" class="sidebar-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <header>
+  <div class="header-content">
+    <div class="profile-section">
+      <h1>Hridya Dhulipala</h1>
+      <p class="subtitle">Ph.D. Candidate, Computer Science</p>
+      <p class="focus">AI-driven Software Engineering & Testing</p>
+    </div>
+    <div class="links">
+      <a href="mailto:hridya.dhulipala@utdallas.edu" class="link-btn" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+        <span>Email</span>
+      </a>
+      <a href="https://github.com/yourusername" class="link-btn" aria-label="GitHub" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a href="https://linkedin.com/in/yourprofile" class="link-btn" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+        <span>LinkedIn</span>
+      </a>
+      <a href="assets/Resume-Hridya_Dhulipala.pdf" class="link-btn primary" aria-label="Download CV">
+        <i class="fas fa-download"></i>
+        <span>Download CV</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+    <section class="about-section">
+  <h2><i class="fas fa-user"></i> About Me</h2>
+  <div class="about-content-wrapper">
+    <div class="profile-image-container">
+      <img src="assets/profile.jpg" alt="Hridya Dhulipala" class="profile-image" onerror="this.style.display='none'">
+    </div>
+    <div class="about-text-wrapper">
+      <p align="justify">
+        I am a Ph.D. candidate in Computer Science at The University of Texas at Dallas, advised by <strong>Dr. Tien N. Nguyen</strong>. My research focuses on AI-assisted software engineering and testing (like fuzzing and web automation), with a particular emphasis on Large Language Models for improving software reliability. I am currently working as an AI Researcher in collaboration with <strong>DMI (Digital Management, LLC)</strong>, where I develop production-scale NLP and LLM-based systems for automated compliance evaluation and AI-assisted code migration, bridging academic research with real-world deployment.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><i class="fas fa-flask"></i> Research Lab</h2>
+  <div class="content-box">
+    <h3>AI4Code Lab</h3>
+    <p class="institution">Advisor: <strong>Dr. Tien N. Nguyen</strong></p>
+    <p>I am part of the AI4Code research lab at The University of Texas at Dallas, led by Dr. Tien N. Nguyen. The lab focuses on applying artificial intelligence and machine learning techniques to software engineering challenges.</p>
+    <ul class="tags lab-links">
+      <li>
+        <a href="https://personal.utdallas.edu/~tien.n.nguyen/" target="_blank" rel="noopener" class="lab-tag-link">
+          <i class="fas fa-globe"></i> Lab Homepage
+        </a>
+      </li>
+      <li>
+        <a href="https://scholar.google.com/citations?user=l4QhOVoAAAAJ&hl=en" target="_blank" rel="noopener" class="lab-tag-link">
+          <i class="fas fa-graduation-cap"></i> Google Scholar Profile
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2><i class="fas fa-flask"></i> Research Interests</h2>
+  <ul class="tags">
+    <li><i class="fas fa-robot"></i> AI-assisted Web Testing</li>
+    <li><i class="fas fa-code"></i> LLM-based Fuzzing</li>
+    <li><i class="fas fa-shield-alt"></i> Software Security</li>
+    <li><i class="fas fa-search"></i> Program Analysis</li>
+    <li><i class="fas fa-spider"></i> Web Automation</li>
+  </ul>
+</section>
+
+    <footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Hridya Dhulipala. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="mailto:hridya.dhulipala@utdallas.edu" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+  </main>
+</div>
+
+<script>
+  // Set active link based on current page
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.sidebar-link').forEach(link => {
+    if (link.getAttribute('href') === currentPage || 
+        (currentPage === 'index.html' && link.getAttribute('href') === 'index.html')) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+
+  // Handle sidebar hover behavior
+  const menuToggle = document.querySelector('.menu-toggle');
+  const sidebar = document.querySelector('.sidebar');
+  const mainContent = document.querySelector('.main-content');
+  const layoutContainer = document.querySelector('.layout-container');
+
+  let sidebarTimeout;
+
+  function showSidebar() {
+    clearTimeout(sidebarTimeout);
+    sidebar.style.transform = 'translateX(0)';
+    mainContent.style.marginLeft = '280px';
+  }
+
+  function hideSidebar() {
+    sidebarTimeout = setTimeout(() => {
+      sidebar.style.transform = 'translateX(-100%)';
+      mainContent.style.marginLeft = '0';
+    }, 300);
+  }
+
+  menuToggle.addEventListener('mouseenter', showSidebar);
+  sidebar.addEventListener('mouseenter', showSidebar);
+  sidebar.addEventListener('mouseleave', hideSidebar);
+  menuToggle.addEventListener('mouseleave', () => {
+    // Only hide if not hovering over sidebar
+    if (!sidebar.matches(':hover')) {
+      hideSidebar();
+    }
+  });
+
+  // Page transition on navigation
+  function handlePageTransition(e) {
+    const link = e.currentTarget;
+    const href = link.getAttribute('href');
+    
+    // Only handle internal navigation (not external links or anchors)
+    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+      e.preventDefault();
+      
+      // Mark that we're transitioning
+      sessionStorage.setItem('isTransitioning', 'true');
+      
+      // Prevent body scroll during transition
+      document.body.classList.add('transitioning');
+      
+      // Add transition class to main content
+      mainContent.classList.add('transitioning-out');
+      
+      // Hide body completely after slide-out to prevent flash
+      setTimeout(() => {
+        document.body.classList.add('transitioning-out');
+        document.body.classList.remove('transitioning');
+      }, 450);
+      
+      // Navigate after animation completes
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500);
+    }
+  }
+
+  // Check if we're coming from a transition and start with slide-in
+  if (sessionStorage.getItem('isTransitioning') === 'true') {
+    sessionStorage.removeItem('isTransitioning');
+    // Restore body visibility and remove transition classes
+    document.body.style.opacity = '';
+    document.body.style.visibility = '';
+    document.body.classList.remove('transitioning-out');
+    // The slide-in animation is already applied via CSS to .main-content
+  }
+
+  // Add transition to all navigation links
+  document.querySelectorAll('.sidebar-link, .nav-icon-btn').forEach(link => {
+    link.addEventListener('click', handlePageTransition);
+  });
+</script>
+
+</body>
+</html>

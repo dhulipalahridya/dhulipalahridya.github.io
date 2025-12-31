@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skills | Hridya Dhulipala</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+<script>
+  // Immediately check for transition state to prevent flash
+  (function() {
+    if (sessionStorage.getItem('isTransitioning') === 'true') {
+      document.body.style.opacity = '0';
+      document.body.style.visibility = 'hidden';
+    }
+  })();
+</script>
+
+<div class="layout-container">
+  <div class="top-nav-buttons">
+    <div class="menu-toggle" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </div>
+    <a href="index.html" class="nav-icon-btn" aria-label="Home" title="Home">
+      <i class="fas fa-home"></i>
+    </a>
+    <a href="publications.html" class="nav-icon-btn" aria-label="Publications" title="Publications">
+      <i class="fas fa-book"></i>
+    </a>
+    <a href="experience.html" class="nav-icon-btn" aria-label="Experience" title="Experience">
+      <i class="fas fa-briefcase"></i>
+    </a>
+    <a href="education.html" class="nav-icon-btn" aria-label="Education" title="Education">
+      <i class="fas fa-graduation-cap"></i>
+    </a>
+    <a href="skills.html" class="nav-icon-btn active-nav" aria-label="Skills" title="Skills">
+      <i class="fas fa-code"></i>
+    </a>
+    <a href="contact.html" class="nav-icon-btn" aria-label="Contact" title="Contact">
+      <i class="fas fa-phone"></i>
+    </a>
+  </div>
+  <nav class="sidebar">
+    <a href="index.html" class="sidebar-logo">Hridya Dhulipala</a>
+    <ul class="sidebar-menu">
+      <li><a href="index.html" class="sidebar-link">About</a></li>
+      <li><a href="publications.html" class="sidebar-link">Publications</a></li>
+      <li><a href="experience.html" class="sidebar-link">Experience</a></li>
+      <li><a href="education.html" class="sidebar-link">Education</a></li>
+      <li><a href="skills.html" class="sidebar-link active">Skills</a></li>
+      <li><a href="contact.html" class="sidebar-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <header>
+  <div class="header-content">
+    <div class="profile-section">
+      <h1>Skills & Certifications</h1>
+      <p class="subtitle">Technical Expertise & Credentials</p>
+    </div>
+  </div>
+</header>
+
+    <section>
+  <h2><i class="fas fa-code"></i> Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-category">
+      <h4>Languages</h4>
+      <ul class="tags">
+        <li>Python</li>
+        <li>C++</li>
+        <li>Java</li>
+        <li>SQL</li>
+      </ul>
+    </div>
+    <div class="skill-category">
+      <h4>ML/AI Frameworks</h4>
+      <ul class="tags">
+        <li>PyTorch</li>
+        <li>TensorFlow</li>
+      </ul>
+    </div>
+    <div class="skill-category">
+      <h4>Testing & Automation</h4>
+      <ul class="tags">
+        <li>Selenium</li>
+        <li>Playwright</li>
+        <li>JUnit</li>
+      </ul>
+    </div>
+    <div class="skill-category">
+      <h4>Web Technologies</h4>
+      <ul class="tags">
+        <li>Node.js</li>
+        <li>Angular</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><i class="fas fa-certificate"></i> Certifications</h2>
+  <div class="certifications">
+    <div class="cert-item">
+      <i class="fas fa-award"></i>
+      <div>
+        <h4>Machine Learning</h4>
+        <p>Stanford University</p>
+      </div>
+    </div>
+    <div class="cert-item">
+      <i class="fas fa-award"></i>
+      <div>
+        <h4>Data Analysis with Python</h4>
+        <p>IBM</p>
+      </div>
+    </div>
+    <div class="cert-item">
+      <i class="fas fa-award"></i>
+      <div>
+        <h4>Security Fundamentals</h4>
+        <p>Microsoft</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Hridya Dhulipala. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="mailto:hridya.dhulipala@utdallas.edu" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+  </main>
+</div>
+
+<script>
+  // Set active link based on current page
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.sidebar-link').forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+
+  // Handle sidebar hover behavior
+  const menuToggle = document.querySelector('.menu-toggle');
+  const sidebar = document.querySelector('.sidebar');
+  const mainContent = document.querySelector('.main-content');
+
+  let sidebarTimeout;
+
+  function showSidebar() {
+    clearTimeout(sidebarTimeout);
+    sidebar.style.transform = 'translateX(0)';
+    mainContent.style.marginLeft = '280px';
+  }
+
+  function hideSidebar() {
+    sidebarTimeout = setTimeout(() => {
+      sidebar.style.transform = 'translateX(-100%)';
+      mainContent.style.marginLeft = '0';
+    }, 300);
+  }
+
+  menuToggle.addEventListener('mouseenter', showSidebar);
+  sidebar.addEventListener('mouseenter', showSidebar);
+  sidebar.addEventListener('mouseleave', hideSidebar);
+  menuToggle.addEventListener('mouseleave', () => {
+    // Only hide if not hovering over sidebar
+    if (!sidebar.matches(':hover')) {
+      hideSidebar();
+    }
+  });
+
+  // Page transition on navigation
+  function handlePageTransition(e) {
+    const link = e.currentTarget;
+    const href = link.getAttribute('href');
+    
+    // Only handle internal navigation (not external links or anchors)
+    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+      e.preventDefault();
+      
+      // Mark that we're transitioning
+      sessionStorage.setItem('isTransitioning', 'true');
+      
+      // Prevent body scroll during transition
+      document.body.classList.add('transitioning');
+      
+      // Add transition class to main content
+      mainContent.classList.add('transitioning-out');
+      
+      // Hide body completely after slide-out to prevent flash
+      setTimeout(() => {
+        document.body.classList.add('transitioning-out');
+        document.body.classList.remove('transitioning');
+      }, 450);
+      
+      // Navigate after animation completes
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500);
+    }
+  }
+
+  // Add transition to all navigation links
+  document.querySelectorAll('.sidebar-link, .nav-icon-btn').forEach(link => {
+    link.addEventListener('click', handlePageTransition);
+  });
+
+  // Check if we're coming from a transition and start with slide-in
+  if (sessionStorage.getItem('isTransitioning') === 'true') {
+    sessionStorage.removeItem('isTransitioning');
+    // Restore body visibility and remove transition classes
+    document.body.style.opacity = '';
+    document.body.style.visibility = '';
+    document.body.classList.remove('transitioning-out');
+    // The slide-in animation is already applied via CSS to .main-content
+  }
+</script>
+
+</body>
+</html>
+
