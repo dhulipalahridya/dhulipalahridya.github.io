@@ -12,24 +12,24 @@
 <body>
 
 <div class="layout-container">
-  <div class="menu-toggle" aria-label="Toggle Menu">
-    <i class="fas fa-bars"></i>
-  </div>
-  <div class="quick-nav">
-    <a href="publications.html" class="quick-nav-btn" title="Publications">
+  <div class="top-nav-buttons">
+    <div class="menu-toggle" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </div>
+    <a href="publications.html" class="nav-icon-btn" aria-label="Publications" title="Publications">
       <i class="fas fa-book"></i>
     </a>
-    <a href="experience.html" class="quick-nav-btn" title="Experience">
+    <a href="experience.html" class="nav-icon-btn" aria-label="Experience" title="Experience">
       <i class="fas fa-briefcase"></i>
     </a>
-    <a href="education.html" class="quick-nav-btn" title="Education">
+    <a href="education.html" class="nav-icon-btn" aria-label="Education" title="Education">
       <i class="fas fa-graduation-cap"></i>
     </a>
-    <a href="skills.html" class="quick-nav-btn" title="Skills">
+    <a href="skills.html" class="nav-icon-btn" aria-label="Skills" title="Skills">
       <i class="fas fa-code"></i>
     </a>
-    <a href="contact.html" class="quick-nav-btn" title="Contact">
-      <i class="fas fa-envelope"></i>
+    <a href="contact.html" class="nav-icon-btn" aria-label="Contact" title="Contact">
+      <i class="fas fa-phone"></i>
     </a>
   </div>
   <nav class="sidebar">
@@ -75,11 +75,11 @@
 
     <section class="about-section">
   <h2><i class="fas fa-user"></i> About Me</h2>
-  <div class="content-box about-content">
+  <div class="about-content-wrapper">
     <div class="profile-image-container">
       <img src="assets/profile.jpg" alt="Hridya Dhulipala" class="profile-image" onerror="this.style.display='none'">
     </div>
-    <div class="about-text">
+    <div class="about-text-wrapper">
       <p>
         I am a Ph.D. candidate in Computer Science at The University of Texas at Dallas,
         advised by <strong>Dr. Tien N. Nguyen</strong>. My research focuses on AI-assisted software testing,
@@ -96,14 +96,18 @@
     <h3>AI4Code Lab</h3>
     <p class="institution">Advisor: <strong>Dr. Tien N. Nguyen</strong></p>
     <p>I am part of the AI4Code research lab at The University of Texas at Dallas, led by Dr. Tien N. Nguyen. The lab focuses on applying artificial intelligence and machine learning techniques to software engineering challenges.</p>
-    <div class="lab-links">
-      <a href="https://personal.utdallas.edu/~tien.n.nguyen/" target="_blank" rel="noopener" class="lab-link">
-        <i class="fas fa-globe"></i> Lab Homepage
-      </a>
-      <a href="https://scholar.google.com/citations?user=l4QhOVoAAAAJ&hl=en" target="_blank" rel="noopener" class="lab-link">
-        <i class="fas fa-graduation-cap"></i> Google Scholar Profile
-      </a>
-    </div>
+    <ul class="tags lab-links">
+      <li>
+        <a href="https://personal.utdallas.edu/~tien.n.nguyen/" target="_blank" rel="noopener" class="lab-tag-link">
+          <i class="fas fa-globe"></i> Lab Homepage
+        </a>
+      </li>
+      <li>
+        <a href="https://scholar.google.com/citations?user=l4QhOVoAAAAJ&hl=en" target="_blank" rel="noopener" class="lab-tag-link">
+          <i class="fas fa-graduation-cap"></i> Google Scholar Profile
+        </a>
+      </li>
+    </ul>
   </div>
 </section>
 
