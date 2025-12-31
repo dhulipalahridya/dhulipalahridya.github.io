@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Hridya Dhulipala</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="layout-container">
+  <div class="menu-toggle" aria-label="Toggle Menu">
+    <i class="fas fa-bars"></i>
+  </div>
+  <a href="index.html" class="home-button" aria-label="Home">
+    <i class="fas fa-home"></i>
+  </a>
+  <nav class="sidebar">
+    <a href="index.html" class="sidebar-logo">Hridya Dhulipala</a>
+    <ul class="sidebar-menu">
+      <li><a href="index.html" class="sidebar-link">About</a></li>
+      <li><a href="publications.html" class="sidebar-link">Publications</a></li>
+      <li><a href="experience.html" class="sidebar-link">Experience</a></li>
+      <li><a href="education.html" class="sidebar-link">Education</a></li>
+      <li><a href="skills.html" class="sidebar-link">Skills</a></li>
+      <li><a href="contact.html" class="sidebar-link active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <header>
+      <div class="header-content">
+        <div class="profile-section">
+          <h1>Contact Me</h1>
+          <p class="subtitle">Get in Touch</p>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2><i class="fas fa-envelope"></i> Contact Information</h2>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-details">
+            <h3>Email</h3>
+            <a href="mailto:hridya.dhulipala@utdallas.edu">hridya.dhulipala@utdallas.edu</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-university"></i>
+          </div>
+          <div class="contact-details">
+            <h3>Institution</h3>
+            <p>The University of Texas at Dallas</p>
+            <p>Department of Computer Science</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fab fa-github"></i>
+          </div>
+          <div class="contact-details">
+            <h3>GitHub</h3>
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fab fa-linkedin"></i>
+          </div>
+          <div class="contact-details">
+            <h3>LinkedIn</h3>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 Hridya Dhulipala. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="mailto:hridya.dhulipala@utdallas.edu" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  // Set active link based on current page
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.sidebar-link').forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+
+  // Handle sidebar hover behavior
+  const menuToggle = document.querySelector('.menu-toggle');
+  const sidebar = document.querySelector('.sidebar');
+  const mainContent = document.querySelector('.main-content');
+
+  let sidebarTimeout;
+
+  function showSidebar() {
+    clearTimeout(sidebarTimeout);
+    sidebar.style.transform = 'translateX(0)';
+    mainContent.style.marginLeft = '280px';
+  }
+
+  function hideSidebar() {
+    sidebarTimeout = setTimeout(() => {
+      sidebar.style.transform = 'translateX(-100%)';
+      mainContent.style.marginLeft = '0';
+    }, 300);
+  }
+
+  menuToggle.addEventListener('mouseenter', showSidebar);
+  sidebar.addEventListener('mouseenter', showSidebar);
+  sidebar.addEventListener('mouseleave', hideSidebar);
+  menuToggle.addEventListener('mouseleave', () => {
+    // Only hide if not hovering over sidebar
+    if (!sidebar.matches(':hover')) {
+      hideSidebar();
+    }
+  });
+</script>
+
+</body>
+</html>
+
