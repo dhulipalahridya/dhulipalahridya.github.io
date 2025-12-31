@@ -39,48 +39,63 @@
     <section>
   <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
 
-  <div class="card">
-    <div class="card-header">
+  <div class="card expandable-card">
+    <div class="card-header clickable-header">
       <div>
         <h3>AI Researcher</h3>
         <p class="company">DMI (with UTD)</p>
       </div>
-      <span class="date-badge">June 2024 – Present</span>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span class="date-badge">June 2024 – Present</span>
+        <i class="fas fa-chevron-down expand-icon"></i>
+      </div>
     </div>
-    <ul class="card-list">
-      <li><i class="fas fa-check-circle"></i> Co-invented an Enhanced Retrieval-Augmented Generation framework (Patent Pending)</li>
-      <li><i class="fas fa-check-circle"></i> Built NLP-based compliance automation reducing review time by 80%</li>
-      <li><i class="fas fa-check-circle"></i> Developed AI-assisted Angular code migration pipelines</li>
-    </ul>
+    <div class="card-content">
+      <ul class="card-list">
+        <li><i class="fas fa-check-circle"></i> Co-invented an Enhanced Retrieval-Augmented Generation framework (Patent Pending)</li>
+        <li><i class="fas fa-check-circle"></i> Built NLP-based compliance automation reducing review time by 80%</li>
+        <li><i class="fas fa-check-circle"></i> Developed AI-assisted Angular code migration pipelines</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="card">
-    <div class="card-header">
+  <div class="card expandable-card">
+    <div class="card-header clickable-header">
       <div>
         <h3>Business Technology Analyst</h3>
         <p class="company">Deloitte</p>
       </div>
-      <span class="date-badge">Sep 2021 – Jul 2022</span>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span class="date-badge">Sep 2021 – Jul 2022</span>
+        <i class="fas fa-chevron-down expand-icon"></i>
+      </div>
     </div>
-    <ul class="card-list">
-      <li><i class="fas fa-check-circle"></i> Built enterprise microsites using Angular, Java, HTML, CSS</li>
-      <li><i class="fas fa-check-circle"></i> Developed scalable backend systems in Java</li>
-      <li><i class="fas fa-check-circle"></i> Strengthened quality assurance with JUnit testing</li>
-    </ul>
+    <div class="card-content">
+      <ul class="card-list">
+        <li><i class="fas fa-check-circle"></i> Built enterprise microsites using Angular, Java, HTML, CSS</li>
+        <li><i class="fas fa-check-circle"></i> Developed scalable backend systems in Java</li>
+        <li><i class="fas fa-check-circle"></i> Strengthened quality assurance with JUnit testing</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="card">
-    <div class="card-header">
+  <div class="card expandable-card">
+    <div class="card-header clickable-header">
       <div>
         <h3>Software & Intelligence Intern</h3>
         <p class="company">Ather Energy</p>
       </div>
-      <span class="date-badge">Feb 2021 – Aug 2021</span>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span class="date-badge">Feb 2021 – Aug 2021</span>
+        <i class="fas fa-chevron-down expand-icon"></i>
+      </div>
     </div>
-    <ul class="card-list">
-      <li><i class="fas fa-check-circle"></i> Designed full-stack web applications using Node.js</li>
-      <li><i class="fas fa-check-circle"></i> Built responsive, performance-optimized UI components</li>
-    </ul>
+    <div class="card-content">
+      <ul class="card-list">
+        <li><i class="fas fa-check-circle"></i> Designed full-stack web applications using Node.js</li>
+        <li><i class="fas fa-check-circle"></i> Built responsive, performance-optimized UI components</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -152,6 +167,14 @@
     if (!sidebar.matches(':hover')) {
       hideSidebar();
     }
+  });
+
+  // Handle expandable job cards
+  document.querySelectorAll('.expandable-card').forEach(card => {
+    const header = card.querySelector('.clickable-header');
+    header.addEventListener('click', () => {
+      card.classList.toggle('expanded');
+    });
   });
 </script>
 
