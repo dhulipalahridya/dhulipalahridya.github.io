@@ -12,6 +12,9 @@
 <body>
 
 <div class="layout-container">
+  <div class="menu-toggle" aria-label="Toggle Menu">
+    <i class="fas fa-bars"></i>
+  </div>
   <nav class="sidebar">
     <a href="index.html" class="sidebar-logo">Hridya Dhulipala</a>
     <ul class="sidebar-menu">
@@ -38,32 +41,38 @@
   <div class="papers">
     <div class="paper-item">
       <div class="paper-title-row">
-        <h3>CRISPE: Semantic-Guided Execution Planning for Code Coverage Prediction</h3>
+        <h3><a href="https://dl.acm.org/doi/10.1145/3729401" target="_blank" rel="noopener" class="paper-link">CRISPE: Semantic-Guided Execution Planning for Code Coverage Prediction</a></h3>
         <span class="paper-badge accepted">FSE 2025</span>
       </div>
     </div>
     <div class="paper-item">
       <div class="paper-title-row">
-        <h3>Planning LLMs for Static Detection of Runtime Errors</h3>
+        <h3><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=HLhcRTUAAAAJ&citation_for_view=HLhcRTUAAAAJ:2osOgNQ5qMEC" target="_blank" rel="noopener" class="paper-link">Planning a Large Language Model for Static Detection of Runtime Errors in Code Snippets</a></h3>
         <span class="paper-badge accepted">ICSE 2025</span>
       </div>
     </div>
     <div class="paper-item">
       <div class="paper-title-row">
-        <h3>Planning to Guide LLM for Code Coverage Prediction</h3>
+        <h3><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=HLhcRTUAAAAJ&citation_for_view=HLhcRTUAAAAJ:u5HHmVD_uO8C" target="_blank" rel="noopener" class="paper-link">Planning to Guide LLM for Code Coverage Prediction</a></h3>
         <span class="paper-badge accepted">ICSE (FORGE) 2024</span>
       </div>
     </div>
     <div class="paper-item">
       <div class="paper-title-row">
-        <h3>Program-for-Thought: Adaptive Planning for Web Test Script Generation</h3>
+        <h3><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=HLhcRTUAAAAJ&citation_for_view=HLhcRTUAAAAJ:qjMakFHDy7sC" target="_blank" rel="noopener" class="paper-link">Blended Analysis for Predictive Execution</a></h3>
         <span class="paper-badge review">Under Review (FSE 2026)</span>
       </div>
     </div>
     <div class="paper-item">
       <div class="paper-title-row">
-        <h3>CERBERUS: Coverage-Guided Execution-Free Fuzz Testing for Code Snippets</h3>
-        <span class="paper-badge">Work in Progress</span>
+        <h3><a href="https://www.arxiv.org/abs/2512.21431" target="_blank" rel="noopener" class="paper-link">CERBERUS: Multi-Agent Reasoning and Coverage-Guided Exploration for Static Detection of Runtime Errors</a></h3>
+        <span class="paper-badge accepted">arXiv 2025</span>
+      </div>
+    </div>
+    <div class="paper-item">
+      <div class="paper-title-row">
+        <h3><a href="https://arxiv.org/abs/2512.21440" target="_blank" rel="noopener" class="paper-link">FuzzWise: Intelligent Initial Corpus Generation for Fuzzing</a></h3>
+        <span class="paper-badge accepted">arXiv 2025</span>
       </div>
     </div>
     <div class="paper-item">
@@ -103,6 +112,36 @@
       link.classList.add('active');
     } else {
       link.classList.remove('active');
+    }
+  });
+
+  // Handle sidebar hover behavior
+  const menuToggle = document.querySelector('.menu-toggle');
+  const sidebar = document.querySelector('.sidebar');
+  const mainContent = document.querySelector('.main-content');
+
+  let sidebarTimeout;
+
+  function showSidebar() {
+    clearTimeout(sidebarTimeout);
+    sidebar.style.transform = 'translateX(0)';
+    mainContent.style.marginLeft = '280px';
+  }
+
+  function hideSidebar() {
+    sidebarTimeout = setTimeout(() => {
+      sidebar.style.transform = 'translateX(-100%)';
+      mainContent.style.marginLeft = '0';
+    }, 300);
+  }
+
+  menuToggle.addEventListener('mouseenter', showSidebar);
+  sidebar.addEventListener('mouseenter', showSidebar);
+  sidebar.addEventListener('mouseleave', hideSidebar);
+  menuToggle.addEventListener('mouseleave', () => {
+    // Only hide if not hovering over sidebar
+    if (!sidebar.matches(':hover')) {
+      hideSidebar();
     }
   });
 </script>
