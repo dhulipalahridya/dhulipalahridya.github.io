@@ -578,13 +578,17 @@ section h2 i {
 .expandable-card .card-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-  padding: 0 2rem;
+  transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.3s ease;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .expandable-card.expanded .card-content {
   max-height: 1000px;
   padding: 0 2rem 2rem 2rem;
+  opacity: 1;
+  visibility: visible;
 }
 
 .expand-icon {
