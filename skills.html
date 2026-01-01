@@ -211,7 +211,7 @@
       // Add transition class to main content
       mainContent.classList.add('transitioning-out');
       
-      // Navigate after slide-out animation completes
+      // Navigate after fade-out animation completes
       setTimeout(() => {
         window.location.href = href;
       }, 500);
@@ -223,7 +223,7 @@
     link.addEventListener('click', handlePageTransition);
   });
 
-  // Check if we're coming from a transition and start with slide-in immediately
+  // Check if we're coming from a transition and start with fade-in immediately
   if (sessionStorage.getItem('isTransitioning') === 'true') {
     sessionStorage.removeItem('isTransitioning');
     const mainContent = document.querySelector('.main-content');
